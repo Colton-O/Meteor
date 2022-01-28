@@ -1,7 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Char_Control.gd" type="Script" id=1]
 [ext_resource path="res://Cam_control.gd" type="Script" id=2]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.831373, 0.662745, 0.917647, 1 )
+rim_enabled = true
+rim = 0.22
+rim_tint = 0.33
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="SphereShape" id=1]
 
@@ -11,6 +20,14 @@
 script = ExtResource( 1 )
 
 [node name="CSGSphere" type="CSGSphere" parent="meteor"]
+material = SubResource( 2 )
+
+[node name="CSGBox" type="CSGBox" parent="meteor/CSGSphere"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00560796, 0.347045, -0.670768 )
+width = 1.227
+height = 0.361
+depth = 0.521
+material = SubResource( 3 )
 
 [node name="CollisionShape" type="CollisionShape" parent="meteor"]
 shape = SubResource( 1 )
