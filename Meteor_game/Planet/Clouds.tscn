@@ -1,3 +1,14 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Planet/SH_Clouds.tres" type="Shader" id=1]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/Color = Color( 1, 1, 1, 1 )
+shader_param/Speed = 0.1
 
 [node name="Clouds" type="CSGSphere"]
+radius = 1.2
+radial_segments = 32
+rings = 16
+material = SubResource( 1 )

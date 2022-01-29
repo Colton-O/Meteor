@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Meteaor/Char_Control.gd" type="Script" id=1]
 [ext_resource path="res://Meteaor/Cam_control.gd" type="Script" id=2]
 [ext_resource path="res://Meteaor/meteor1.tres" type="ArrayMesh" id=3]
 [ext_resource path="res://Meteaor/SH_MeteorParticles.tres" type="Shader" id=4]
 [ext_resource path="res://Meteaor/particles_Meteor.tres" type="Material" id=5]
+[ext_resource path="res://Meteaor/FireParticles_Meteor.tres" type="Material" id=6]
 
 [sub_resource type="SphereShape" id=1]
 
@@ -13,6 +14,12 @@ shader = ExtResource( 4 )
 
 [sub_resource type="SphereMesh" id=5]
 material = SubResource( 4 )
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = ExtResource( 4 )
+
+[sub_resource type="SphereMesh" id=7]
+material = SubResource( 6 )
 
 [node name="meteor_root" type="Spatial"]
 
@@ -36,3 +43,9 @@ draw_pass_1 = SubResource( 5 )
 [node name="CSGMesh" type="CSGMesh" parent="meteor"]
 transform = Transform( -2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0, 0, 0 )
 mesh = ExtResource( 3 )
+
+[node name="Particles2" type="Particles" parent="meteor"]
+amount = 256
+local_coords = false
+process_material = ExtResource( 6 )
+draw_pass_1 = SubResource( 7 )
