@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Meteaor/Char_Control.gd" type="Script" id=1]
 [ext_resource path="res://Meteaor/Cam_control.gd" type="Script" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Meteaor/SH_MeteorParticles.tres" type="Shader" id=4]
 [ext_resource path="res://Meteaor/particles_Meteor.tres" type="Material" id=5]
 [ext_resource path="res://Meteaor/FireParticles_Meteor.tres" type="Material" id=6]
+[ext_resource path="res://Meteaor/meteor_outline.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Meteaor/M_outline.tres" type="Material" id=8]
 
 [sub_resource type="SphereShape" id=1]
 
@@ -48,3 +50,11 @@ draw_pass_1 = SubResource( 7 )
 
 [node name="meteor1" parent="meteor" instance=ExtResource( 3 )]
 transform = Transform( -2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0, 0, 0 )
+
+[node name="Icosphere2" parent="meteor/meteor1" instance=ExtResource( 7 )]
+transform = Transform( 1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, 0, 0, 0 )
+skeleton = NodePath("../..")
+material/0 = ExtResource( 8 )
+material/1 = ExtResource( 8 )
+material/2 = ExtResource( 8 )
+material/3 = ExtResource( 8 )
