@@ -1,13 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Char_Control.gd" type="Script" id=1]
-[ext_resource path="res://Cam_control.gd" type="Script" id=2]
-
-[sub_resource type="SpatialMaterial" id=2]
-albedo_color = Color( 0.831373, 0.662745, 0.917647, 1 )
-rim_enabled = true
-rim = 0.22
-rim_tint = 0.33
+[ext_resource path="res://Meteaor/Char_Control.gd" type="Script" id=1]
+[ext_resource path="res://Meteaor/Cam_control.gd" type="Script" id=2]
+[ext_resource path="res://Meteaor/M_Meteor.tres" type="Material" id=3]
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0, 0, 0, 1 )
@@ -20,7 +15,7 @@ albedo_color = Color( 0, 0, 0, 1 )
 script = ExtResource( 1 )
 
 [node name="CSGSphere" type="CSGSphere" parent="meteor"]
-material = SubResource( 2 )
+material = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="meteor/CSGSphere"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00560796, 0.347045, -0.670768 )

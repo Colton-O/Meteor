@@ -21,11 +21,11 @@ func _physics_process(_delta):
 	
 
 	if dist < 10:
-		gravity = .01
+		gravity = .006
 	else:
 		gravity = 0
-		
-		
+	
+
 		
 		
 	
