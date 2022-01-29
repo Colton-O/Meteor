@@ -8,6 +8,7 @@ var meteor
 var dist
 var gravity = 0
 var gravity_vector
+var in_orbit = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,11 +22,22 @@ func _physics_process(_delta):
 	
 
 	if dist < 10:
+		if in_orbit == false:
+			orbit_set()
+			
 		gravity = .006
 	else:
 		gravity = 0
 	
 
-		
-		
+func orbit_set():
+	in_orbit = true
+	var orbit = get_parent().get_node("Orbit_count")
+	orbit.global_transform = meteor.global_transform
+
+	
+	
+	
+	
+	
 	

@@ -23,6 +23,7 @@ func _process(delta):
 		d_time += delta
 		if d_time > .75:
 			get_tree().reload_current_scene()
+			free()
 
 func _physics_process(delta):
 	# Get inputs
