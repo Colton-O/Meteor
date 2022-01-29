@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Planet/Gravity_Well.gd" type="Script" id=1]
 [ext_resource path="res://Planet/M_Planet.tres" type="Material" id=2]
+[ext_resource path="res://M_BlueAtmosphere.tres" type="Material" id=3]
 
 [sub_resource type="SphereShape" id=1]
 
@@ -16,3 +17,9 @@ shape = SubResource( 1 )
 
 [node name="CSGSphere" type="CSGSphere" parent="."]
 material = ExtResource( 2 )
+
+[node name="CSGSphere2" type="CSGSphere" parent="."]
+radius = 1.5
+radial_segments = 32
+rings = 16
+material = ExtResource( 3 )

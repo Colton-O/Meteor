@@ -1,0 +1,72 @@
+[gd_resource type="VisualShader" load_steps=5 format=2]
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=2]
+uniform_name = "Power"
+
+[sub_resource type="VisualShaderNodeFresnel" id=1]
+
+[sub_resource type="VisualShaderNodeTextureUniform" id=3]
+uniform_name = "Gradient"
+
+[sub_resource type="VisualShaderNodeVectorCompose" id=4]
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_add, depth_draw_always, specular_disabled;
+
+uniform float Power;
+uniform sampler2D Gradient;
+
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// ScalarUniform:10
+	float n_out10p0 = Power;
+
+// Fresnel:2
+	float n_out2p0 = pow(1.0 - clamp(dot(NORMAL, VIEW), 0.0, 1.0), n_out10p0);
+
+// VectorCompose:30
+	float n_in30p1 = 0.00000;
+	float n_in30p2 = 0.00000;
+	vec3 n_out30p0 = vec3(n_out2p0, n_in30p1, n_in30p2);
+
+// TextureUniform:29
+	vec3 n_out29p0;
+	float n_out29p1;
+	{
+		vec4 n_tex_read = texture(Gradient, n_out30p0.xy);
+		n_out29p0 = n_tex_read.rgb;
+		n_out29p1 = n_tex_read.a;
+	}
+
+// Output:0
+	ALPHA = n_out29p1;
+	EMISSION = n_out29p0;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( -1276.8, -131.035 )
+modes/blend = 1
+modes/depth_draw = 1
+modes/specular = 4
+nodes/fragment/0/position = Vector2( 480, 160 )
+nodes/fragment/2/node = SubResource( 1 )
+nodes/fragment/2/position = Vector2( -300, 240 )
+nodes/fragment/10/node = SubResource( 2 )
+nodes/fragment/10/position = Vector2( -540, 300 )
+nodes/fragment/29/node = SubResource( 3 )
+nodes/fragment/29/position = Vector2( 220, 160 )
+nodes/fragment/30/node = SubResource( 4 )
+nodes/fragment/30/position = Vector2( 0, 240 )
+nodes/fragment/connections = PoolIntArray( 10, 0, 2, 3, 2, 0, 30, 0, 30, 0, 29, 0, 29, 1, 0, 1, 29, 0, 0, 5 )
