@@ -5,6 +5,7 @@
 [ext_resource path="res://vfx/Sparkle.png" type="Texture" id=3]
 [ext_resource path="res://Planet/Orbit.tscn" type="PackedScene" id=4]
 [ext_resource path="res://GUI/YagiUhfNo2.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://Stars.gd" type="Script" id=6]
 
 [sub_resource type="Environment" id=1]
 background_mode = 1
@@ -19,7 +20,7 @@ curve = SubResource( 6 )
 
 [sub_resource type="ParticlesMaterial" id=3]
 emission_shape = 2
-emission_box_extents = Vector3( 100, 100, 100 )
+emission_box_extents = Vector3( 500, 500, 500 )
 gravity = Vector3( 0, 0, 0 )
 scale = 3.0
 scale_random = 1.0
@@ -41,8 +42,6 @@ emission_on_uv2 = false
 
 [sub_resource type="QuadMesh" id=4]
 material = SubResource( 5 )
-
-[sub_resource type="BoxShape" id=8]
 
 [sub_resource type="DynamicFont" id=10]
 size = 80
@@ -68,31 +67,18 @@ transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -7.84245, -29.5822 )
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
 
+[node name="Orbit" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -9.69928, 0.127405, -3.77512 )
+
 [node name="Stars" type="Particles" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.38519 )
-amount = 1000
+amount = 100000
 lifetime = 3.0
-preprocess = 600.0
+preprocess = 20.0
 randomness = 1.0
 process_material = SubResource( 3 )
 draw_pass_1 = SubResource( 4 )
-
-[node name="death_zone" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.76331, 0, 0 )
-
-[node name="CollisionShape" type="CollisionShape" parent="death_zone"]
-transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 100, 0, -30.5466, 0 )
-shape = SubResource( 8 )
-
-[node name="death_zone2" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.76331, 46.2691, 0 )
-
-[node name="CollisionShape" type="CollisionShape" parent="death_zone2"]
-transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 100, 0, -30.5466, 0 )
-shape = SubResource( 8 )
-
-[node name="Orbit" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -9.69928, 0.127405, -3.77512 )
+script = ExtResource( 6 )
 
 [node name="Score" type="Label" parent="."]
 anchor_left = 0.5

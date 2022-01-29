@@ -23,7 +23,11 @@ func _process(delta):
 		d_time += delta
 		if d_time > .75:
 			get_tree().reload_current_scene()
-			free()
+		
+			
+	if Input.is_key_pressed(KEY_R):
+		get_tree().reload_current_scene()
+		
 
 func _physics_process(delta):
 	# Get inputs

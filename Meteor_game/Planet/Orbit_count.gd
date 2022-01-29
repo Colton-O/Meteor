@@ -9,7 +9,6 @@ func _ready():
 	
 func on_body_enter(body):
 	if init:
-		
 		score += 1
 		score_text.text = "orbits: " + str(score)
 	else:
