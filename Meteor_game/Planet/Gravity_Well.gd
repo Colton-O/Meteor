@@ -45,7 +45,13 @@ func _spawn_planet():
 	var planet = load("res://Planet/Planet.tscn")
 	var p = planet.instance()
 	var v = Vector2(meteor.direction.z, meteor.direction.y)
-	var offset = Vector2(v.y, v.x) / sqrt ((v.y*v.y) + (v.x*v.x)) * -10
+	var x
+	var first_value = bool(randi() % 2)
+	if first_value:
+		x = 10
+	else:
+		x = -10
+	var offset = Vector2(v.y, v.x) / sqrt ((v.y*v.y) + (v.x*v.x)) * x
 	p.translation = meteor.translation + planet_pos + Vector3(planet_pos.x, offset.y, offset.x)
 	p.scale = Vector3(3,3,3)
 	get_node("/root/Spatial").add_child(p)
