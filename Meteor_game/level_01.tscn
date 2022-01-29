@@ -3,7 +3,7 @@
 [ext_resource path="res://Meteaor/Meteor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Planet/Planet.tscn" type="PackedScene" id=2]
 [ext_resource path="res://vfx/Sparkle.png" type="Texture" id=3]
-[ext_resource path="res://Planet/Orbit_count.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Planet/Orbit.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Environment" id=1]
 background_mode = 1
@@ -77,5 +77,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.76331, 46.2691, 0 )
 transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 100, 0, -30.5466, 0 )
 shape = SubResource( 8 )
 
-[node name="Orbit_count" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -30.2036, -21.4199, -3.67988 )
+[node name="Orbit" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -9.69928, 0.127405, -3.77512 )

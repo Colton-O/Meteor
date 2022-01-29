@@ -40,6 +40,7 @@ func _physics_process(delta):
 		speed = 0
 	if speed > max_speed:
 		speed = max_speed
+		
 	# set direction
 	velocity = direction * speed * delta
 	

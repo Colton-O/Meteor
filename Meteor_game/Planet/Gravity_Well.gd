@@ -32,7 +32,7 @@ func _physics_process(_delta):
 
 func orbit_set():
 	in_orbit = true
-	var orbit = get_parent().get_node("Orbit_count")
+	var orbit = get_parent().get_node("Orbit")
 	orbit.global_transform = meteor.global_transform
 
 	
