@@ -3,7 +3,7 @@ extends KinematicBody
 
 # Declare member variables here. Examples:
 var speed = 0
-var max_speed = 20
+var max_speed = 30
 var acceleration = .25
 var velocity : Vector3 = Vector3(0,0,0)
 var decelration = .1
@@ -52,6 +52,9 @@ func _physics_process(delta):
 	# detect collision
 	if move_and_collide(velocity):
 		explode()
+		
+	# look forward
+	look_at(self.translation + (direction *10), Vector3.UP)
 		
 		
 		

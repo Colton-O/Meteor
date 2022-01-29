@@ -59,7 +59,7 @@ Label/styles/normal = null
 [node name="Spatial" type="Spatial"]
 
 [node name="meteor_root" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.173007, 0.800085 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.373337, -0.172992, -0.468531 )
 
 [node name="Planet" parent="." instance=ExtResource( 2 )]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -7.84245, -29.5822 )

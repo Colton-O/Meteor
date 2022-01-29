@@ -1,13 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Meteaor/Char_Control.gd" type="Script" id=1]
 [ext_resource path="res://Meteaor/Cam_control.gd" type="Script" id=2]
-[ext_resource path="res://Meteaor/M_Meteor.tres" type="Material" id=3]
+[ext_resource path="res://Meteaor/meteor1.tres" type="ArrayMesh" id=3]
 [ext_resource path="res://Meteaor/SH_MeteorParticles.tres" type="Shader" id=4]
 [ext_resource path="res://Meteaor/particles_Meteor.tres" type="Material" id=5]
-
-[sub_resource type="SpatialMaterial" id=3]
-albedo_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="SphereShape" id=1]
 
@@ -26,16 +23,6 @@ script = ExtResource( 2 )
 [node name="meteor" type="KinematicBody" parent="."]
 script = ExtResource( 1 )
 
-[node name="CSGSphere" type="CSGSphere" parent="meteor"]
-material = ExtResource( 3 )
-
-[node name="CSGBox" type="CSGBox" parent="meteor/CSGSphere"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00560796, 0.347045, -0.670768 )
-width = 1.227
-height = 0.361
-depth = 0.521
-material = SubResource( 3 )
-
 [node name="CollisionShape" type="CollisionShape" parent="meteor"]
 shape = SubResource( 1 )
 
@@ -45,3 +32,7 @@ lifetime = 3.0
 local_coords = false
 process_material = ExtResource( 5 )
 draw_pass_1 = SubResource( 5 )
+
+[node name="CSGMesh" type="CSGMesh" parent="meteor"]
+transform = Transform( -2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0, 0, 0 )
+mesh = ExtResource( 3 )
