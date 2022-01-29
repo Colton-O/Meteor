@@ -62,7 +62,7 @@ Label/styles/normal = null
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.373337, -0.172992, -0.468531 )
 
 [node name="Planet" parent="." instance=ExtResource( 2 )]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -7.84245, -29.5822 )
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0.727737, -7.43316, -28.3986 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )

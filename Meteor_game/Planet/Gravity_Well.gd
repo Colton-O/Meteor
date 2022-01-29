@@ -48,9 +48,9 @@ func _spawn_planet():
 	var x
 	var first_value = bool(randi() % 2)
 	if first_value:
-		x = 10
+		x = 7
 	else:
-		x = -10
+		x = -7
 	var offset = Vector2(v.y, v.x) / sqrt ((v.y*v.y) + (v.x*v.x)) * x
 	p.translation = meteor.translation + planet_pos + Vector3(planet_pos.x, offset.y, offset.x)
 	p.scale = Vector3(3,3,3)
