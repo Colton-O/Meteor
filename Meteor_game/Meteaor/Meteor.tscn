@@ -11,6 +11,10 @@ albedo_color = Color( 0, 0, 0, 1 )
 
 [node name="meteor_root" type="Spatial"]
 
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.254209, 0, 2.64097 )
+script = ExtResource( 2 )
+
 [node name="meteor" type="KinematicBody" parent="."]
 script = ExtResource( 1 )
 
@@ -26,7 +30,3 @@ material = SubResource( 3 )
 
 [node name="CollisionShape" type="CollisionShape" parent="meteor"]
 shape = SubResource( 1 )
-
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.254209, 0, 2.64097 )
-script = ExtResource( 2 )
