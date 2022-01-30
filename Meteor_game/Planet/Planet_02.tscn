@@ -44,4 +44,4 @@ rings = 16
 material = SubResource( 5 )
 
 [node name="planet-2" parent="." instance=ExtResource( 2 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
+transform = Transform( 1.41421, 0, 1.41421, 0, 2, 0, -1.41421, 0, 1.41421, 0, 0, 0 )
