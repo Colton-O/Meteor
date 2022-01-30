@@ -1,10 +1,22 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Planet/Gravity_Well.gd" type="Script" id=1]
 [ext_resource path="res://Planet/planet_meshes/p_mesh_2.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Planet/VFX/M_BlueAtmosphere.tres" type="Material" id=3]
+[ext_resource path="res://SH_Atmosphere.tres" type="Shader" id=3]
 
 [sub_resource type="SphereShape" id=1]
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0.159129, 0.236181, 0.313233, 0.338358, 0.966499, 1 )
+colors = PoolColorArray( 0.952837, 0.369302, 0.369302, 0.183843, 1, 0.67981, 0.523438, 0, 1, 0.854902, 0.639216, 0.0980392, 1, 0.818726, 0.472656, 0.235294, 0.784314, 0, 0, 0, 1, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 3 )
+shader_param/Power = 0.336
+shader_param/Gradient = SubResource( 3 )
 
 [node name="Planet" type="KinematicBody"]
 script = ExtResource( 1 )
@@ -14,11 +26,10 @@ transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0 )
 shape = SubResource( 1 )
 
 [node name="Atmosphere" type="CSGSphere" parent="."]
-visible = false
-radius = 5.5
+radius = 15.0
 radial_segments = 32
 rings = 16
-material = ExtResource( 3 )
+material = SubResource( 4 )
 
 [node name="planet-2" parent="." instance=ExtResource( 2 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )

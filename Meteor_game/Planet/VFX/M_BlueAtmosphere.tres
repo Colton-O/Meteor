@@ -4,8 +4,8 @@
 
 [sub_resource type="Gradient" id=1]
 resource_name = "Atmos"
-offsets = PoolRealArray( 0, 0.449704, 0.526627, 0.609467, 0.763314, 1 )
-colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.027451, 0.839216, 0.835294, 0.929412, 0.627451, 0.054902, 0, 1, 0.643137, 0.054902, 0, 1, 0.207843, 0.0549021, 0, 1, 0 )
+offsets = PoolRealArray( 0, 0.485207, 0.527638, 0.574539, 0.633577, 0.982482 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0, 0.839216, 0.835294, 0.929412, 0.207843, 0.054902, 0, 0.996078, 0.219608, 0.054902, 0, 1, 0.0823529, 0.0549021, 0, 1, 0 )
 
 [sub_resource type="GradientTexture" id=2]
 gradient = SubResource( 1 )
