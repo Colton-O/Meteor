@@ -46,9 +46,15 @@ func _spawn_planet():
 	var p_dist = 700
 	var planet_pos = meteor.direction * 50
 	var planet = load("res://Planet/Planet_01.tscn")
-	if bool(randi() % 2):
-		planet = load("res://Planet/Planet_02.tscn")
-	
+
+	match randi() % 3:
+		0:
+			planet = load("res://Planet/Planet_01.tscn")
+		1:
+			planet = load("res://Planet/Planet_02.tscn")
+		2:
+			planet = load("res://Planet/Planet_04.tscn")
+			
 	var p = planet.instance()
 	var v = Vector2(meteor.direction.z, meteor.direction.y)
 	var first_value = bool(randi() % 2)
