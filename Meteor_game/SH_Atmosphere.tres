@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=5 format=2]
+[gd_resource type="VisualShader" load_steps=7 format=2]
 
 [sub_resource type="VisualShaderNodeScalarUniform" id=2]
 uniform_name = "Power"
@@ -10,9 +10,14 @@ uniform_name = "Gradient"
 
 [sub_resource type="VisualShaderNodeVectorCompose" id=4]
 
+[sub_resource type="VisualShaderNodeScalarConstant" id=5]
+
+[sub_resource type="VisualShaderNodeScalarConstant" id=6]
+constant = 1.0
+
 [resource]
 code = "shader_type spatial;
-render_mode blend_add, depth_draw_always, specular_disabled;
+render_mode blend_add, cull_disabled, specular_disabled, depth_test_disable, shadows_disabled, ambient_light_disabled;
 
 uniform float Power;
 uniform sampler2D Gradient;
@@ -45,8 +50,17 @@ void fragment() {
 		n_out29p1 = n_tex_read.a;
 	}
 
+// Scalar:31
+	float n_out31p0 = 0.000000;
+
+// Scalar:32
+	float n_out32p0 = 1.000000;
+
 // Output:0
 	ALPHA = n_out29p1;
+	METALLIC = n_out31p0;
+	ROUGHNESS = n_out32p0;
+	SPECULAR = n_out31p0;
 	EMISSION = n_out29p0;
 
 }
@@ -56,10 +70,13 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -1276.8, -131.035 )
+graph_offset = Vector2( -587, 225 )
 modes/blend = 1
-modes/depth_draw = 1
+modes/cull = 2
 modes/specular = 4
+flags/ambient_light_disabled = true
+flags/depth_test_disable = true
+flags/shadows_disabled = true
 nodes/fragment/0/position = Vector2( 480, 160 )
 nodes/fragment/2/node = SubResource( 1 )
 nodes/fragment/2/position = Vector2( -300, 240 )
@@ -69,4 +86,8 @@ nodes/fragment/29/node = SubResource( 3 )
 nodes/fragment/29/position = Vector2( 220, 160 )
 nodes/fragment/30/node = SubResource( 4 )
 nodes/fragment/30/position = Vector2( 0, 240 )
-nodes/fragment/connections = PoolIntArray( 10, 0, 2, 3, 2, 0, 30, 0, 30, 0, 29, 0, 29, 1, 0, 1, 29, 0, 0, 5 )
+nodes/fragment/31/node = SubResource( 5 )
+nodes/fragment/31/position = Vector2( 220, 340 )
+nodes/fragment/32/node = SubResource( 6 )
+nodes/fragment/32/position = Vector2( 220, 400 )
+nodes/fragment/connections = PoolIntArray( 10, 0, 2, 3, 2, 0, 30, 0, 30, 0, 29, 0, 29, 1, 0, 1, 29, 0, 0, 5, 31, 0, 0, 2, 31, 0, 0, 4, 32, 0, 0, 3 )
