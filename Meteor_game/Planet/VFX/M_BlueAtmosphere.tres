@@ -12,5 +12,5 @@ gradient = SubResource( 1 )
 
 [resource]
 shader = ExtResource( 1 )
-shader_param/Power = 0.18
+shader_param/Power = 0.217
 shader_param/Gradient = SubResource( 2 )
