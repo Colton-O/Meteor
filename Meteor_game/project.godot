@@ -11,8 +11,12 @@ config_version=4
 [application]
 
 config/name="Meteor"
-run/main_scene="res://level_01.tscn"
+run/main_scene="res://Begin.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/stretch/mode="2d"
 
 [input]
 
