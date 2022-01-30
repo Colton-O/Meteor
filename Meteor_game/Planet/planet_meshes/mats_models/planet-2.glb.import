@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/planet1.glb-caea09a7490bb5d5bf6cbbf801641f79.scn"
+path="res://.import/planet-2.glb-b1de95048680d6a948c493273c153df6.scn"
 
 [deps]
 
-source_file="res://Planet/planet1.glb"
-dest_files=[ "res://.import/planet1.glb-caea09a7490bb5d5bf6cbbf801641f79.scn" ]
+source_file="res://Planet/planet_meshes/mats_models/planet-2.glb"
+dest_files=[ "res://.import/planet-2.glb-b1de95048680d6a948c493273c153df6.scn" ]
 
 [params]
 

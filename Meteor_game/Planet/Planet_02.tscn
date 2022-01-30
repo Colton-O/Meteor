@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Planet/Gravity_Well.gd" type="Script" id=1]
-[ext_resource path="res://Planet/Planet_mesh.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Planet/M_BlueAtmosphere.tres" type="Material" id=3]
+[ext_resource path="res://Planet/planet_meshes/p_mesh_2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Planet/VFX/M_BlueAtmosphere.tres" type="Material" id=3]
 
 [sub_resource type="SphereShape" id=1]
 
@@ -10,13 +10,14 @@
 script = ExtResource( 1 )
 
 [node name="Main_col" type="CollisionShape" parent="."]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0 )
 shape = SubResource( 1 )
 
 [node name="Atmosphere" type="CSGSphere" parent="."]
-radius = 1.5
+radius = 5.5
 radial_segments = 32
 rings = 16
 material = ExtResource( 3 )
 
-[node name="planet1" parent="." instance=ExtResource( 2 )]
-transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0 )
+[node name="planet-2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )

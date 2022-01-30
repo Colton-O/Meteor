@@ -1,6 +1,7 @@
 [gd_resource type="VisualShader" load_steps=12 format=2]
 
-[ext_resource path="res://Planet/Clouds.png" type="Texture" id=1]
+[ext_resource path="res://Planet/VFX/Clouds.png" type="Texture" id=1]
+
 
 [sub_resource type="VisualShaderNodeColorUniform" id=1]
 uniform_name = "Color"

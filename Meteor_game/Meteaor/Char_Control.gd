@@ -3,14 +3,15 @@ extends KinematicBody
 
 # Declare member variables here. Examples:
 var speed = 0
-var max_speed = 30
-var acceleration = .25
+var max_speed = 50
+var acceleration = .5
 var velocity : Vector3 = Vector3(0,0,0)
-var decelration = .1
+var decelration = .25
 var direction
 var dead
 var i_acel
 var d_time
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

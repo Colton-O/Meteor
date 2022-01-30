@@ -11,6 +11,8 @@ func on_body_enter(body):
 	if init:
 		score += 1
 		score_text.text = "orbits: " + str(score)
+		var part = get_node("WIn")
+		part.emitting = true
 	else:
 		init = true
 
