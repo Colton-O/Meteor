@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Meteaor/Char_Control.gd" type="Script" id=1]
 [ext_resource path="res://Meteaor/Cam_control.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Meteaor/FireParticles_Meteor.tres" type="Material" id=6]
 [ext_resource path="res://Meteaor/meteor_outline.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Meteaor/M_outline.tres" type="Material" id=8]
+[ext_resource path="res://Music/ES_Snowballs Hit Coat Back 7 - SFX Producer.mp3" type="AudioStream" id=9]
 
 [sub_resource type="SphereShape" id=1]
 
@@ -58,3 +59,7 @@ material/0 = ExtResource( 8 )
 material/1 = ExtResource( 8 )
 material/2 = ExtResource( 8 )
 material/3 = ExtResource( 8 )
+
+[node name="ouch" type="AudioStreamPlayer3D" parent="meteor"]
+stream = ExtResource( 9 )
+unit_db = 80.0

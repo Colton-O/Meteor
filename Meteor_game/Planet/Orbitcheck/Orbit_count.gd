@@ -14,6 +14,8 @@ func on_body_enter(body):
 		var part = get_node("WIn")
 		part.global_transform = body.global_transform
 		part.emitting = true
+		var chime = get_node("chime")
+		chime.playing = true
 	else:
 		init = true
 

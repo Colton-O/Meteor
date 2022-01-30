@@ -52,7 +52,10 @@ func _physics_process(delta):
 	
 	# detect collision
 	if move_and_collide(velocity):
-		explode()
+		var e
+		if !e:
+			explode()
+			e = true
 		
 	# look forward
 	look_at(self.translation + (direction *10), Vector3.UP)
@@ -64,6 +67,8 @@ func explode():
 	var e = explosion.instance()
 	e.global_transform = self.global_transform
 	get_node("/root/Spatial").add_child(e)
+	var ouch = get_node("ouch")
+	ouch.playing = true
 	speed = 0
 	dead = true
 	
