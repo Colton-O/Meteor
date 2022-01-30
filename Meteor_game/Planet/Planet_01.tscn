@@ -20,12 +20,14 @@ transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0 )
 shape = SubResource( 1 )
 
 [node name="Atmosphere" type="CSGSphere" parent="."]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0 )
 radius = 20.0
 radial_segments = 32
 rings = 16
 material = ExtResource( 3 )
 
 [node name="Clouds" type="CSGSphere" parent="."]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0 )
 radius = 8.5
 radial_segments = 32
 rings = 16
