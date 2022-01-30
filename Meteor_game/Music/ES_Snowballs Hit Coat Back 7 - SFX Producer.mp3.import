@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ES_Snowballs Hit Coat Back 7 - SFX Producer.mp3-6869d827270a057b69d8e6eb61a9f5df.mp3str"
+
+[deps]
+
+source_file="res://Music/ES_Snowballs Hit Coat Back 7 - SFX Producer.mp3"
+dest_files=[ "res://.import/ES_Snowballs Hit Coat Back 7 - SFX Producer.mp3-6869d827270a057b69d8e6eb61a9f5df.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
