@@ -12,7 +12,7 @@ var gravity_start = 20
 var gravity_vector
 var in_orbit = false
 var orbit
-var p_offset = 15
+var p_offset = 20
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
