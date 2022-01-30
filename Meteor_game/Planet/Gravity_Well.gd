@@ -47,13 +47,15 @@ func _spawn_planet():
 	var planet_pos = meteor.direction * 50
 	var planet = load("res://Planet/Planet_01.tscn")
 
-	match randi() % 3:
+	match randi() % 4:
 		0:
 			planet = load("res://Planet/Planet_01.tscn")
 		1:
 			planet = load("res://Planet/Planet_02.tscn")
 		2:
 			planet = load("res://Planet/Planet_04.tscn")
+		3:
+			planet = load("res://Planet/Planet_03.tscn")
 			
 	var p = planet.instance()
 	var v = Vector2(meteor.direction.z, meteor.direction.y)
