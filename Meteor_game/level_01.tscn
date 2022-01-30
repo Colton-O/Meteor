@@ -45,7 +45,7 @@ emission_on_uv2 = false
 material = SubResource( 5 )
 
 [sub_resource type="DynamicFont" id=10]
-size = 80
+size = 60
 outline_size = 5
 extra_spacing_char = 35
 font_data = ExtResource( 5 )
@@ -80,12 +80,14 @@ draw_pass_1 = SubResource( 4 )
 script = ExtResource( 6 )
 
 [node name="Score" type="Label" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -495.0
-margin_top = 68.0
-margin_right = 442.0
-margin_bottom = 165.0
+anchor_left = 0.299
+anchor_top = 0.943
+anchor_right = 0.299
+anchor_bottom = 0.943
+margin_left = -284.176
+margin_top = -79.8
+margin_right = 284.824
+margin_bottom = 0.200012
 theme = SubResource( 9 )
 text = "Orbits: "
 valign = 1
