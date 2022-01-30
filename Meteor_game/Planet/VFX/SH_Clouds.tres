@@ -32,7 +32,7 @@ uniform_name = "Speed"
 
 [resource]
 code = "shader_type spatial;
-render_mode cull_disabled, specular_schlick_ggx, unshaded;
+render_mode blend_add, cull_disabled, specular_disabled, unshaded, shadows_disabled, ambient_light_disabled;
 
 uniform vec4 Color : hint_color;
 uniform float Speed;
@@ -93,8 +93,12 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -1130, -31 )
+graph_offset = Vector2( -587, 225 )
+modes/blend = 1
 modes/cull = 2
+modes/specular = 4
+flags/ambient_light_disabled = true
+flags/shadows_disabled = true
 flags/unshaded = true
 nodes/fragment/2/node = SubResource( 3 )
 nodes/fragment/2/position = Vector2( -60, 160 )
