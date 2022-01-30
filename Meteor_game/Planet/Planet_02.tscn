@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Planet/Gravity_Well.gd" type="Script" id=1]
 [ext_resource path="res://Planet/planet_meshes/p_mesh_2.tscn" type="PackedScene" id=2]
 [ext_resource path="res://SH_Atmosphere.tres" type="Shader" id=3]
+[ext_resource path="res://Planet/VFX/SH_Clouds.tres" type="Shader" id=4]
 
 [sub_resource type="SphereShape" id=1]
 
@@ -18,6 +19,11 @@ shader = ExtResource( 3 )
 shader_param/Power = 0.336
 shader_param/Gradient = SubResource( 3 )
 
+[sub_resource type="ShaderMaterial" id=5]
+shader = ExtResource( 4 )
+shader_param/Color = Color( 0.87451, 0.870588, 0.478431, 0.658824 )
+shader_param/Speed = 0.05
+
 [node name="Planet" type="KinematicBody"]
 script = ExtResource( 1 )
 
@@ -30,6 +36,12 @@ radius = 15.0
 radial_segments = 32
 rings = 16
 material = SubResource( 4 )
+
+[node name="Clouds" type="CSGSphere" parent="."]
+radius = 5.116
+radial_segments = 32
+rings = 16
+material = SubResource( 5 )
 
 [node name="planet-2" parent="." instance=ExtResource( 2 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
